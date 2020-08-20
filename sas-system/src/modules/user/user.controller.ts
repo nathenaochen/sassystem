@@ -1,10 +1,12 @@
 import { Controller, Get, Post, Body, ForbiddenException, UsePipes } from '@nestjs/common';
 import {UserService} from './user.service';
+import {ApiTags} from '@nestjs/swagger';
 import {userAccountDto, loginDto} from '../dto/user.dto';
 import {ParseInitPipe} from '../../pipe/parse-init.pipe';
 import {resData} from '../../dto/res.dto';
 
 @Controller('user')
+@ApiTags('user')
 @UsePipes(ParseInitPipe)
 export class UserController {
   constructor(private readonly userService : UserService){}

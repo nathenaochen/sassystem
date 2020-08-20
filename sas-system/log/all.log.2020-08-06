@@ -1,0 +1,33 @@
+{"level":"error","message":{"statusCode":404,"message":"Cannot POST /auth","error":"Not Found"},"timestamp":"2020-08-06T09:27:54.356Z"}
+{"level":"error","message":{"isNotEmpty":"username should not be empty"},"timestamp":"2020-08-06T09:32:42.008Z"}
+{"context":"cur","level":"info","message":{"body":{"username":"yt","password":"111111","passwordSure":"111111"}},"timestamp":"2020-08-06T09:33:49.608Z"}
+{"context":"cur Request","level":"info","message":{"reqBody":{"username":"yt","password":"111111","passwordSure":"111111"},"reqQuery":{}},"timestamp":"2020-08-06T09:36:17.892Z"}
+{"context":"cur Response","level":"info","message":{"res":{"code":"0","result":{"msg":"此用户名已经注册了"}}},"timestamp":"2020-08-06T09:36:17.952Z"}
+{"context":"cur Request","level":"info","message":{"reqBody":{"username":"yt","password":"111111","passwordSure":"111111"},"reqQuery":{},"url":"/user/register"},"timestamp":"2020-08-06T09:37:42.052Z"}
+{"context":"cur Response","level":"info","message":{"res":{"code":"0","result":{"msg":"此用户名已经注册了"}}},"timestamp":"2020-08-06T09:37:42.110Z"}
+{"context":"cur Request","level":"info","message":{"reqBody":{"username":"yt","password":"111111","passwordSure":"111111"},"reqQuery":{},"url":"/user/register"},"timestamp":"2020-08-06T09:38:36.090Z"}
+{"context":"cur Response","level":"info","message":{"res":{"code":"0","result":{"msg":"此用户名已经注册了"}},"url":"/user/register"},"timestamp":"2020-08-06T09:38:36.139Z"}
+{"context":"cur Request","level":"info","message":{"reqQuery":{},"url":"/user/register"},"timestamp":"2020-08-06T09:40:27.805Z"}
+{"context":"cur Response","level":"info","message":{"res":{"code":"0","result":{"msg":"此用户名已经注册了"}},"url":"/user/register"},"timestamp":"2020-08-06T09:40:27.902Z"}
+{"context":"cur Request","level":"info","message":{"reqBody":{"username":"yt","password":"111111","passwordSure":"111111"},"reqQuery":{},"url":"/user/register"},"timestamp":"2020-08-06T10:06:14.828Z"}
+{"context":"cur Response","level":"info","message":{"res":{"code":"0","result":{"msg":"此用户名已经注册了"}},"url":"/user/register"},"timestamp":"2020-08-06T10:06:14.951Z"}
+{"context":"cur Request","level":"info","message":{"reqBody":{"username":"yt","password":"111111","passwordSure":"111111"},"reqQuery":{},"url":"/user/register"},"timestamp":"2020-08-06T10:06:41.162Z"}
+{"context":"cur Response","level":"info","message":{"res":{"code":"0","result":{"msg":"此用户名已经注册了"}},"url":"/user/register"},"timestamp":"2020-08-06T10:06:41.214Z"}
+{"context":"cur Request","level":"info","message":{"reqBody":{"username":"yt","password":"111111","passwordSure":"111111"},"reqQuery":{},"url":"/user/register"},"timestamp":"2020-08-06T10:07:12.582Z"}
+{"context":"cur Response","level":"info","message":{"res":{"code":"0","result":{"msg":"此用户名已经注册了"}},"url":"/user/register"},"timestamp":"2020-08-06T10:07:12.622Z"}
+{"context":"cur Request","level":"info","message":{"reqBody":{"username":"yt","password":"111111","passwordSure":"111111"},"reqQuery":{},"url":"/user/register"},"timestamp":"2020-08-06T10:07:20.882Z"}
+{"context":"cur Response","level":"info","message":{"res":{"code":"0","result":{"msg":"此用户名已经注册了"}},"url":"/user/register"},"timestamp":"2020-08-06T10:07:20.889Z"}
+{"context":"cur Request","level":"info","message":{"reqBody":{"username":"yt","password":"111111","passwordSure":"111111"},"reqQuery":{},"url":"/user/register"},"timestamp":"2020-08-06T10:07:21.638Z"}
+{"context":"cur Response","level":"info","message":{"res":{"code":"0","result":{"msg":"此用户名已经注册了"}},"url":"/user/register"},"timestamp":"2020-08-06T10:07:21.642Z"}
+{"context":"cur Request","level":"info","message":{"reqBody":{"username":"yt","password":"111111","passwordSure":"111111"},"reqQuery":{},"url":"/user/register"},"timestamp":"2020-08-06T10:12:23.908Z"}
+{"context":"cur Response","level":"info","message":{"res":{"code":"0","result":{"msg":"此用户名已经注册了"}},"url":"/user/register"},"timestamp":"2020-08-06T10:12:23.916Z"}
+{"context":"cur Request","level":"info","message":{"reqBody":{"username":"yt","password":"111111","passwordSure":"111111"},"reqQuery":{},"url":"/user/register"},"timestamp":"2020-08-06T10:12:39.547Z"}
+{"context":"cur Response","level":"info","message":{"res":{"code":"0","result":{"msg":"此用户名已经注册了"}},"url":"/user/register"},"timestamp":"2020-08-06T10:12:39.585Z"}
+{"context":"cur Request","level":"info","message":{"reqBody":{"username":"yt","password":"111111","passwordSure":"111111"},"reqQuery":{},"url":"/user/register"},"timestamp":"2020-08-06T10:12:42.434Z"}
+{"context":"cur Response","level":"info","message":{"res":{"code":"0","result":{"msg":"此用户名已经注册了"}},"url":"/user/register"},"timestamp":"2020-08-06T10:12:42.439Z"}
+{"context":"cur Request","level":"info","message":"{\"reqBody\":{\"username\":\"yt\",\"password\":\"111111\",\"passwordSure\":\"111111\"},\"reqQuery\":{},\"url\":\"/user/register\"}","timestamp":"2020-08-06T10:14:03.852Z"}
+{"context":"cur Response","level":"info","message":{"res":{"code":"0","result":{"msg":"此用户名已经注册了"}},"url":"/user/register"},"timestamp":"2020-08-06T10:14:03.892Z"}
+{"context":"cur Request","level":"info","message":"{\"reqBody\":{\"username\":\"yt\",\"password\":\"111111\",\"passwordSure\":\"111111\"},\"reqQuery\":{},\"url\":\"/user/register\"}","timestamp":"2020-08-06T10:14:44.726Z"}
+{"context":"cur Response","level":"info","message":"{\"res\":{\"code\":\"0\",\"result\":{\"msg\":\"此用户名已经注册了\"}},\"url\":\"/user/register\"}","timestamp":"2020-08-06T10:14:44.791Z"}
+{"context":"cur Request","level":"info","message":"{\"reqBody\":{\"username\":\"yt\",\"password\":\"111111\",\"passwordSure\":\"111111\"},\"reqQuery\":{},\"url\":\"/user/register\"}","timestamp":"2020-08-06T10:14:46.613Z"}
+{"context":"cur Response","level":"info","message":"{\"res\":{\"code\":\"0\",\"result\":{\"msg\":\"此用户名已经注册了\"}},\"url\":\"/user/register\"}","timestamp":"2020-08-06T10:14:46.618Z"}

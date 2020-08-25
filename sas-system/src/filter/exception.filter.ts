@@ -19,7 +19,7 @@ export class ErrorExceptionFilter implements ExceptionFilter {
       // console.log('filter',this.logger.error+'');
       // this.logger.error(exception.getResponse(),'error trace','error message')z`
       this.logger.error(exception.getResponse(),'error trace','error message')
-      response.status(status).send(resData.fail({},exception.getResponse()));
+      response.status(status).send(resData.fail({},exception.getResponse(),`${status}`));
       // response.status(status).send(resData.success({}))
     }else{
       // console.log(exception.message,'oo');

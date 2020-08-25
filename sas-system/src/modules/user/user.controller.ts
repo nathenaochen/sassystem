@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, ForbiddenException, UsePipes } from '@nestjs/common';
+import { Controller, Get, Post, Body, ForbiddenException, UsePipes, Param, Query } from '@nestjs/common';
 import {UserService} from './user.service';
 import {ApiTags} from '@nestjs/swagger';
 import {userAccountDto, loginDto} from '../dto/user.dto';
@@ -12,8 +12,14 @@ export class UserController {
   constructor(private readonly userService : UserService){}
   @Get()
   index(){
-    return this.userService.testMongo();
-    // return 'aaa'
+    // return this.userService.testMongo();
+    return 'aaa'
+  }
+
+  @Get('getuser')
+  getUser(@Query() query){
+    // console.log(query);
+    return this.userService.testMongo(query.username);
   }
 
   @Post('register')

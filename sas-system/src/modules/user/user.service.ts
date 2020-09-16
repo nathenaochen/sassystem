@@ -16,9 +16,9 @@ export class UserService {
   async register(user:userAccountDto): Promise<resData<object>>{
     const {username,password,passwordSure, telNum} = user;
     // this.logger.log({body:user},'cur');
-    if(password != passwordSure){return resData.fail({msg:'两次密码不一致'},'两次密码不一致');}
+    if(password != passwordSure){throw new Error('两次密码不一致');}
     const findUser:userAccountDto = await this.userAccount.findOne({username:username});
-    if(findUser){return resData.fail({msg:'此用户名已经注册了'},'此用户名已经注册了');};
+    if(findUser){throw new Error('此用户名已经注册了');};
     let salt = makesalt();
     const admin = new this.userAccount({username:username,tel:telNum,salt:salt,password:encryptPassword(password,salt)});
     const newuser:userAccountDto = await admin.save();
@@ -65,7 +65,8 @@ export class UserService {
     if(findUser){
      return resData.success({user:findUser});
     }else{
-      return resData.fail({},'查无此人');
+      // return resData.fail({},'查无此人');
+      throw new Error('查无此人');
     }
   }
 }

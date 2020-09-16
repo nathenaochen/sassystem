@@ -26,7 +26,11 @@ export class AuthController {
   @UseGuards(AuthGuard('jwt'))
   async validateToken(@Request() Req):Promise<resData<object>>{
     console.log(Req.user);
-    return resData.success(Req.user)
+    if(Req.user.username){
+      return resData.success(Req.user)
+    }else{
+      throw new Error('token认证失败');
+    }
   }
 
 }

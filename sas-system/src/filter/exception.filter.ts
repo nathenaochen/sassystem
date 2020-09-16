@@ -24,7 +24,7 @@ export class ErrorExceptionFilter implements ExceptionFilter {
     }else{
       // console.log(exception.message,'oo');
       this.logger.error(exception.message,'error trace','error message')
-      response.status(500).send(resData.fail({},exception.message));
+      response.status(200).send(resData.fail({},exception.message));
     }
   }
   

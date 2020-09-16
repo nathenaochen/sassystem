@@ -15,7 +15,8 @@ export class AuthService {
       const toaken = this.jwtService.sign(payload);
       return resData.success({token: toaken});
     }else{
-      return resData.success({msg:'认证失败'});
+      // return resData.fail({msg:'认证失败'},'认证失败');
+      throw new Error('认证失败');
     }
 
   }

@@ -19,7 +19,7 @@ if(os.platform() == 'win32'){
 }
 
  @Module({
-    imports:[UserModule,AuthModule,MongooseModule.forRoot('mongodb://localhost:27017/nestTset',{ useNewUrlParser: true }),
+    imports:[UserModule,AuthModule,MongooseModule.forRoot('mongodb://39.99.174.23:27017/tutor',{ useNewUrlParser: true }),
       WinstonModule.forRoot({
         format:winston.format.combine(
           winston.format.timestamp(),

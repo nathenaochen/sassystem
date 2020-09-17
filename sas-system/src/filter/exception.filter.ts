@@ -12,7 +12,7 @@ export class ErrorExceptionFilter implements ExceptionFilter {
       const ctx = host.switchToHttp();
       const response = ctx.getResponse<Response>();
       const request = ctx.getRequest<Request>();
-    if(exception instanceof HttpException){
+    if(exception instanceof HttpException){console.log(exception.message,exception.getResponse(),'o1');
       const status = exception.getStatus();
       // console.log('fliter');
       // console.log(ctx,status,'-----');

@@ -16,10 +16,15 @@ export class userAccountDto {
   @IsNotEmpty()
   passwordSure: string;
 
+  @ApiProperty({description: '角色类型',example:'student'})
+  @IsNotEmpty()
+  type: string;
+
   @ApiProperty({description: '电话号码'})
   telNum?: number;
 
   salt?: string;
+  account?: number;
 
 }
 

@@ -31,7 +31,7 @@ export class userAccountDto {
 export class loginDto {
   @ApiProperty({description: '用户名',example:'lilei'})
   @IsNotEmpty()
-  username: string;
+  account: string;
 
   @ApiProperty({description: '密码', example:'111111'})
   @MinLength(6)

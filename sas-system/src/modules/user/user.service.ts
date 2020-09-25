@@ -37,7 +37,7 @@ export class UserService {
       createdate: new Date().getTime()
     });
     const newuser:userAccountDto = await admin.save();
-    return resData.success({user:{username:newuser.username,key:newuser['_id'],account:newuser.account},msg:'注册成功'},'0');
+    return resData.success({user:{username:newuser.username,key:newuser['_id'],account:newuser.account,type:newuser.type},msg:'注册成功'},'0');
   }
 
   //登录接口

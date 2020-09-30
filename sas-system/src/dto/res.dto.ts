@@ -10,10 +10,10 @@ export class resData <T> {
       this.errorMeg = errorMeg;
     }
   }
-  static success(result:object,code:string = '0'){
-    return new resData<object>(code,result)
+  static success<P>(result:P,code:string = '0'){
+    return new resData(code,result)
   }
-  static fail(result:object,errorMeg:object | string, code:string = '-1'){
+  static fail<P>(result:P,errorMeg:object | string, code:string = '-1'){
     return new resData(code,result,errorMeg)
   }
 }

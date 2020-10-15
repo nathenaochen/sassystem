@@ -8,3 +8,4 @@ export const userAccountScheam = new mongoose.Schema({
   createdate:{type:Number,require: false},
   salt:{type:String,require: false},
 })
+userAccountScheam.index({account:1});

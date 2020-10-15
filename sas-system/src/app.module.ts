@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import {MongooseModule} from '@nestjs/mongoose';
 import {UserModule} from './modules/user/user.module';
+import {ChatModule} from './modules/chat/chat.module';
 import {TeacherMessageModule} from './modules/teacher-message/teacher-message.module';
 import {AuthModule} from './modules/auth/auth.module';
 import {ErrorExceptionFilter} from './filter/exception.filter';
@@ -20,7 +21,7 @@ if(os.platform() == 'win32'){
 }
 
  @Module({
-    imports:[UserModule,AuthModule,TeacherMessageModule,MongooseModule.forRoot('mongodb://39.99.174.23:27017/tutor',{ useNewUrlParser: true }),
+    imports:[UserModule,AuthModule,TeacherMessageModule,ChatModule,MongooseModule.forRoot('mongodb://39.99.174.23:27017/tutor',{ useNewUrlParser: true,useCreateIndex:true }),
       WinstonModule.forRoot({
         format:winston.format.combine(
           winston.format.timestamp(),

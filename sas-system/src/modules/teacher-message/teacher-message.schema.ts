@@ -18,3 +18,4 @@ export const TeacherMessage = new mongoose.Schema({
   teach_feature: {type:String,require: false},
   zuoyouming: {type:String,require: false},
 })
+TeacherMessage.index({key:1});

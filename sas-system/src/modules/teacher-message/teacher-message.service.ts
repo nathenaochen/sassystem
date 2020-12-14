@@ -41,10 +41,21 @@ export class TeacherMessageService {
 
   //完善信息接口
   async complete(msg: TeacherAllDetail): Promise<resData<boolean>>{
-    console.log(msg,'msg');
+    // console.log(msg,'msg');
     try{
-      const teacherMessageInstance = new this.tescherMsg({...msg,createdate: new Date().getTime()});
-      await teacherMessageInstance.save();
+      const completeTeacherMessage = await this.tescherMsg.updateOne(
+        { key: msg.key},
+        { 
+          ...msg,
+          createdate: new Date().getTime()
+        }
+      );
+      // console.log(completeTeacherMessage,'compo');
+      if(completeTeacherMessage.n == 0){
+        const teacherMessageInstance = new this.tescherMsg({...msg,createdate: new Date().getTime()});
+        await teacherMessageInstance.save();
+      }
+
       return resData.success<boolean>(true);
     }catch(err){
       // throw new Error();

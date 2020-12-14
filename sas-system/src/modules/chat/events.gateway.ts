@@ -43,14 +43,15 @@ export class EventsGateway {
   //处理监听进入页面时更新未读消息条数
   @SubscribeMessage('updataunread')
   async handMsgList(client: any, payload: any) {
-    console.log(payload.sender + '_' + payload.receiver);
+    console.log(payload.sender + '_===' + payload.receiver);
     // setInterval(()=>{
     //   client.emit('newmsg', {a:1});
     // },1000)
     try{
-      if(this.noReadMsgNum[payload.receiver + '_' + payload.sender]){
-        this.noReadMsgNum[payload.receiver + '_' + payload.sender] = 0;
+      if(this.noReadMsgNum[payload.sender + '_' + payload.receiver]){
+        this.noReadMsgNum[payload.sender + '_' + payload.receiver] = 0;
       }
+      console.log( this.noReadMsgNum[payload.receiver + '_' + payload.receiver],' this.noReadMsgNum[');
       await this.recentModel.updateOne(
         {writeId:payload.sender + '_' + payload.receiver},
         { 
@@ -65,10 +66,10 @@ export class EventsGateway {
 
   @SubscribeMessage('connection')
   handleConnection(client: any, payload: any) {
-    // console.log(client.handshake.query);
+    console.log(client.handshake.query,'22');
     //websocket建立连接时，根据不同的类型，存储当前的连接对象
     if(client.handshake.query.typeCon == 'detail'){
-      this.connectionClientMap[client.handshake.query.sender] = client;
+      this.connectionClientMap[client.handshake.query.sender + '-' + client.handshake.query.receiver] = client;
       this.onlineNum++;
       console.log(client.handshake.query.sender + ' connected,','onlineNum is  ' + this.onlineNum);
     }else if(client.handshake.query.typeCon == 'list'){
@@ -78,8 +79,8 @@ export class EventsGateway {
     }
     client.on('disconnect', () => {
       //websocket关闭连接时，根据不同的类型，删除当前的连接对象
-      if(this.connectionClientMap[client.handshake.query.sender]){
-        delete this.connectionClientMap[client.handshake.query.sender];
+      if(this.connectionClientMap[client.handshake.query.sender + '-' + client.handshake.query.receiver]){
+        delete this.connectionClientMap[client.handshake.query.sender + '-' + client.handshake.query.receiver];
         this.onlineNum--;
         console.log(client.handshake.query.sender + ' disconnected,', 'onlineNum is  ' + this.onlineNum);
       }else if(this.connectionMsgListClientMap[client.handshake.query.sender]){
@@ -112,8 +113,8 @@ export class EventsGateway {
   //存储记录最近联系人消息
   async writeHistoryRecent(payload: any){
     //如果接受者在线，则将消息分发给接受者
-    if(this.connectionClientMap[payload.receiver]){
-      this.connectionClientMap[payload.receiver].emit('message', payload);
+    if(this.connectionClientMap[payload.receiver + '-' +payload.sender]){console.log( this.noReadMsgNum[payload.receiver + '_' + payload.sender],'weidu1');
+      this.connectionClientMap[payload.receiver + '-' +payload.sender].emit('message', payload);
       //更新当前用户（发送者）的最近联系人信息  先查询发送者是否有与该接受者有历史聊天记录,有的话则直接跟新最新的聊天消息，时间和未读消息数量
       const recentKwssage = await this.recentModel.updateOne({
         writeId:payload.sender + '_' + payload.receiver},
@@ -164,6 +165,7 @@ export class EventsGateway {
       }else{
         this.noReadMsgNum[payload.receiver + '_' + payload.sender] = 1
       }
+      console.log( this.noReadMsgNum[payload.receiver + '_' + payload.sender],'weidu');
       //向列表页推送新消息提示
       this.connectionMsgListClientMap[payload.receiver].emit('newmsg', {
         sender:payload.receiver,
@@ -218,8 +220,8 @@ export class EventsGateway {
         });
         newRecentl.save();
       }
-    }else{//如果接受者不在线，则直接跟新最近联系消息列表
-
+    }else{//如果接受者不在线，则直接更新最近联系消息列表
+      console.log( this.noReadMsgNum[payload.receiver + '_' + payload.sender],' this.noReadMsgNum[',payload.receiver,payload.sender);
       if(this.noReadMsgNum[payload.receiver + '_' + payload.sender]){
         this.noReadMsgNum[payload.receiver + '_' + payload.sender]++;
       }else{

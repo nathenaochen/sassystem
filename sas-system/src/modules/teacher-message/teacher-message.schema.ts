@@ -17,5 +17,6 @@ export const TeacherMessage = new mongoose.Schema({
   personal_introl: {type:String,require: false},
   teach_feature: {type:String,require: false},
   zuoyouming: {type:String,require: false},
+  createdate: {type:Number,require: false},
 })
 TeacherMessage.index({key:1});

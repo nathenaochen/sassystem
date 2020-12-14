@@ -6,7 +6,9 @@ import {MongooseModule} from '@nestjs/mongoose';
 import {UserModule} from './modules/user/user.module';
 import {ChatModule} from './modules/chat/chat.module';
 import {TeacherMessageModule} from './modules/teacher-message/teacher-message.module';
+import {FileUploadModule} from './modules/file-upload/file-upload.module';
 import {AuthModule} from './modules/auth/auth.module';
+import {StudentMessageModule} from './modules/student-message/student-message.module';
 import {ErrorExceptionFilter} from './filter/exception.filter';
 import {InterceptorInterceptor} from './interceptor/interceptor.interceptor';
 import {WinstonModule,utilities} from 'nest-winston';
@@ -21,7 +23,7 @@ if(os.platform() == 'win32'){
 }
 
  @Module({
-    imports:[UserModule,AuthModule,TeacherMessageModule,ChatModule,MongooseModule.forRoot('mongodb://39.99.174.23:27017/tutor',{ useNewUrlParser: true,useCreateIndex:true }),
+    imports:[UserModule,AuthModule,TeacherMessageModule,ChatModule,StudentMessageModule,FileUploadModule,MongooseModule.forRoot('mongodb://39.99.174.23:27017/tutor',{ useNewUrlParser: true,useCreateIndex:true }),
       WinstonModule.forRoot({
         format:winston.format.combine(
           winston.format.timestamp(),

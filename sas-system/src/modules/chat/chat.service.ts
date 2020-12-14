@@ -12,6 +12,7 @@ export class ChatService {
 
   async getRecentlyList(key:any):Promise<resData<any>>{
     try{
+      //根据sender key查找数据，并且查找到的数据中排除_id,writedId字段。
       const reList = await this.recentModel.find({sender: key.senderKey},{_id:0,writeId:0});
       console.log(reList);
       reList.sort((a,b)=>{
